@@ -8,7 +8,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="800" Width="690">
     <Window.DataContext>
-        <viewmodel:MainWindowModelView />
+        <viewmodel:MainWindowModelView/>
     </Window.DataContext>
     <Grid>
         <Grid.ColumnDefinitions>
@@ -54,7 +54,7 @@
             Margin="20 50"
             Content="NWD"
             FontSize="50"
-            Command="{Binding IloczynCommand}"
+            Command="{Binding NWDCommand}"
             CommandParameter="Iloczyn"/>
         <Label
             Grid.Row="3"
