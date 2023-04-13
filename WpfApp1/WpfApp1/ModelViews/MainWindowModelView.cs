@@ -7,8 +7,6 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using System.Windows;
 using WpfApp1.Commands;
-using System.Runtime.InteropServices;
-using System.Security.Cryptography.X509Certificates;
 
 namespace WpfApp1.ModelViews
 {
@@ -33,53 +31,25 @@ namespace WpfApp1.ModelViews
                 OnPropertyChanged(nameof(Arg1));
             }
         }
-        private int arg2;
-        public int Arg2
-        {
-            get { return arg2; }
-            set
-            {
-                arg2 = value;
-                OnPropertyChanged(nameof(Arg2));
-            }
-        }
-        public int NWDcalculate(int a, int b)
-        {
-            while (a != b)
-            {
-                if (a > b)
-                    a -= b;
-                else
-                    b -= a;
-            }
-            return a;
-        }
-        private string header;
-
-        public string Header
-        {
-            get { return header; }
-            set
-            {
-                header = value;
-                OnPropertyChanged(nameof(Header));
-            }
-        }
         public ICommand NWDCommand { get; set; }
-        public void NWD(Object obj)
+        public int NWD(int a, int b)
         {
             try
             {
-                int w = NWDcalculate(Arg1, Arg2);
-                Header = w.ToString();
-                
+                while (a != b)
+                {
+                    if (a > b)
+                        a -= b;
+                    else
+                        b -= a;
+                }
                 
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-            
+            return a;
         }
     }
 }
