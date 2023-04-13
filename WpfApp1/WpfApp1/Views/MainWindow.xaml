@@ -2,11 +2,67 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:viewmodel ="clr-namespace:WpfApp1.ModelViews"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="800" Width="690">
+    <Window.DataContext>
+        <viewmodel:MainWindowModelView />
+    </Window.DataContext>
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <Label
+            Content="Arg1"
+            FontSize="40"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"/>
+        <TextBox
+            Grid.Column="1"
+            Grid.ColumnSpan="2"
+            Margin="40 70"
+            Text="{Binding Arg1}"
+            x:Name="Arg1"/>
+
+        <Label
+            Content="Arg2"
+            FontSize="40"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Grid.Row="1"/>
+        <TextBox
+            Grid.Column="1"
+            Grid.Row="1"
+            Grid.ColumnSpan="2"
+            Margin="40 70"
+            Text="{Binding Arg2}"
+            x:Name="Arg2"/>
+        <Button
+            Grid.Row="2"
+            Grid.Column="1"
+            Margin="20 50"
+            Content="NWD"
+            FontSize="50"
+            Command="{Binding IloczynCommand}"
+            CommandParameter="Iloczyn"/>
+        <Label
+            Grid.Row="3"
+            Grid.Column="1"
+            Content="{Binding Header}"
+            FontSize="40"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"/>
+
     </Grid>
 </Window>
