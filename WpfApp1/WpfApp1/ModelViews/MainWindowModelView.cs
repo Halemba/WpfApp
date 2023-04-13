@@ -72,6 +72,7 @@ namespace WpfApp1.ModelViews
             {
                 int w = NWDcalculate(Arg1, Arg2);
                 Header = w.ToString();
+                //dsaasd
                 
                 
             }

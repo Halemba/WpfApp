@@ -33,7 +33,8 @@
             Grid.ColumnSpan="2"
             Margin="40 70"
             Text="{Binding Arg1}"
-            x:Name="Arg1"/>
+            x:Name="Arg1"
+            FontSize="40"/>
 
         <Label
             Content="Arg2"
@@ -47,7 +48,9 @@
             Grid.ColumnSpan="2"
             Margin="40 70"
             Text="{Binding Arg2}"
-            x:Name="Arg2"/>
+            x:Name="Arg2"
+            FontSize="40"
+            />
         <Button
             Grid.Row="2"
             Grid.Column="1"
